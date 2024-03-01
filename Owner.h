@@ -13,6 +13,7 @@ private:
 public:
     void PrintOwner();
     Owner(std::string newname="None", int newage=0, std::string newsex="unknown");
+    Owner(const Owner &other);
     ~Owner(){
         cout<<endl;
         cout<<"Destructor is here";
