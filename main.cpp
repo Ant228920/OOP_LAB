@@ -5,7 +5,7 @@
 
 
 int main() {
-    Animal first("cat",2);
+    Animal first("cat");
     first.PrintAnimal();
     Animal secondanimal{Animal("cat",2,23.1)};
     secondanimal.PrintAnimal();

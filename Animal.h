@@ -13,9 +13,9 @@ private:
 public:
     void PrintAnimal();
     Animal();
-    Animal(string new_vud);
-    Animal(string new_vud, int new_age);
-    Animal(string new_vud, int new_age, float new_weight);
+    Animal(string vud);
+    Animal(string vud, int age);
+    Animal(string vud, int age, float weight);
     ~Animal(){
         cout<<endl;
         cout<<"Destructor is here";
