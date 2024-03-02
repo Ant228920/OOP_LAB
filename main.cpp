@@ -5,10 +5,11 @@
 
 
 int main() {
-    Animal first("cat");
+    Animal first("cat",2,22);
     first.PrintAnimal();
-    Animal secondanimal{Animal("cat",2,23.1)};
+    Animal secondanimal{Animal("cat",2)};
     secondanimal.PrintAnimal();
+    cout<<"Amount of Animals is "<<Animal::getamountOfAnimals()<<endl;
     std::cout<<endl;
     Owner owner;
     owner.PrintOwner();

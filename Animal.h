@@ -7,10 +7,13 @@ using namespace std;
 
 class Animal{
 private:
+    static int amountOfAnimals;
     string vud;
     int age;
     float weight;
 public:
+    static int getamountOfAnimals();
+
     void PrintAnimal();
     Animal();
     Animal(string vud);
