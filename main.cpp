@@ -2,6 +2,7 @@
 #include "Animal.h"
 #include "Owner.h"
 #include "Company.h"
+#include "Employee.h"
 
 
 int main() {
@@ -40,6 +41,11 @@ int main() {
     p1.PrintOwner();
     cout<<endl<<"Copy ";
     p2.PrintOwner();
+
+    cout<<endl;
+    Employee empl1;
+    cin<<empl1;
+    cout<<empl1;
 
 
 

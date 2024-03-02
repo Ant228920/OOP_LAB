@@ -73,6 +73,12 @@ build CMakeFiles/ooplab1.dir/Company.cpp.obj: CXX_COMPILER__ooplab1_unscanned_De
   OBJECT_DIR = CMakeFiles\ooplab1.dir
   OBJECT_FILE_DIR = CMakeFiles\ooplab1.dir
 
+build CMakeFiles/ooplab1.dir/Employee.cpp.obj: CXX_COMPILER__ooplab1_unscanned_Debug D$:/oop$ labs/ooplab1/Employee.cpp || cmake_object_order_depends_target_ooplab1
+  DEP_FILE = CMakeFiles\ooplab1.dir\Employee.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\ooplab1.dir
+  OBJECT_FILE_DIR = CMakeFiles\ooplab1.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ooplab1
@@ -81,7 +87,7 @@ build CMakeFiles/ooplab1.dir/Company.cpp.obj: CXX_COMPILER__ooplab1_unscanned_De
 #############################################
 # Link the executable ooplab1.exe
 
-build ooplab1.exe: CXX_EXECUTABLE_LINKER__ooplab1_Debug CMakeFiles/ooplab1.dir/main.cpp.obj CMakeFiles/ooplab1.dir/Animal.cpp.obj CMakeFiles/ooplab1.dir/Owner.cpp.obj CMakeFiles/ooplab1.dir/Company.cpp.obj
+build ooplab1.exe: CXX_EXECUTABLE_LINKER__ooplab1_Debug CMakeFiles/ooplab1.dir/main.cpp.obj CMakeFiles/ooplab1.dir/Animal.cpp.obj CMakeFiles/ooplab1.dir/Owner.cpp.obj CMakeFiles/ooplab1.dir/Company.cpp.obj CMakeFiles/ooplab1.dir/Employee.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ooplab1.dir

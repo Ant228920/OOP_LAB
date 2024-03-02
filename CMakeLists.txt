@@ -10,4 +10,6 @@ add_executable(ooplab1 main.cpp
         Owner.h
         Company.cpp
         Company.h
+        Employee.cpp
+        Employee.h
 )
