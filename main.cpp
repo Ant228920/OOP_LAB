@@ -27,8 +27,15 @@ int main() {
     Company obj5 = obj4 + obj3;
     obj5.PrintCompany();
     cout<<endl;
+    Owner p3("Bob",22,"male");
+    Owner p4=p3;
+    cout<<"ORIGINAL: ";
+    p3.PrintOwner();
+    cout<<"Copied: ";
+    p4.PrintOwner();
+
     Owner p1("Alex",20,"male");
-    Owner p2=p1;
+    Owner p2=move(p1);
     cout<<"Orig ";
     p1.PrintOwner();
     cout<<endl<<"Copy ";
