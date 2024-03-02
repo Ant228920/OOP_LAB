@@ -6,12 +6,12 @@ using namespace std;
 
 class Company{
 private:
-    string name;
-    int workyears;
-    string rate;
+    int emplonum;
 public:
     void PrintCompany();
-    Company(string newname="None", int workyears=0, string newrate="Unknown");
+    Company(int number) : emplonum(number) {};
+    Company operator-() const;
+    Company operator+(const Company &other) const;
     ~Company(){
         cout<<endl;
         cout<<"Destructor is here";

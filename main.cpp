@@ -16,8 +16,16 @@ int main() {
     Owner owner1("Andrei", 20);
     owner1.PrintOwner();
     std::cout<<endl;
-    Company company1("AnimalCare",10);
-    company1.PrintCompany();
+    Company obj1(5);
+    Company obj2=-obj1;
+    obj1.PrintCompany();
+    cout<<endl;
+    obj2.PrintCompany();
+    cout<<endl;
+    Company obj4(8);
+    Company obj3(22);
+    Company obj5 = obj4 + obj3;
+    obj5.PrintCompany();
     cout<<endl;
     Owner p1("Alex",20,"male");
     Owner p2=p1;
