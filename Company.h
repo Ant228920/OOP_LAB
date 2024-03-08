@@ -10,8 +10,6 @@ private:
 public:
     void PrintCompany();
     Company(int number) : emplonum(number) {};
-    Company operator-() const;
-    Company operator+(const Company &other) const;
     ~Company(){
         cout<<endl;
         cout<<"Destructor is here";

@@ -2,27 +2,28 @@
 #ifndef OOPLAB1_ANIMAL_H
 #define OOPLAB1_ANIMAL_H
 #include <iostream>
+#include "Features.h"
+
 
 using namespace std;
 
 class Animal{
 private:
-    static int amountOfAnimals;
     string vud;
     int age;
     float weight;
+    Features features;
 public:
-    static int getamountOfAnimals();
-
     void PrintAnimal();
     Animal();
-    Animal(string vud);
-    Animal(string vud, int age);
-    Animal(string vud, int age, float weight);
+    Animal(string newvud);
+    Animal(string newvud, int newage);
+    Animal(string newvud, int newage, float newweight, Features thefeatures);
     ~Animal(){
         cout<<endl;
         cout<<"Destructor is here";
     }
+    friend ostream &operator<<(ostream &os, const Animal &obj);
 };
 
 
