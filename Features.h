@@ -14,7 +14,7 @@ public:
     Features(string newsound);
     Features(string newsound, string newbehaviour);
     friend ostream &operator <<(ostream &os,const Features &obj);
-    ~Features();
+    ~Features(){};
 };
 
 

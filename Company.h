@@ -6,14 +6,16 @@ using namespace std;
 
 class Company{
 private:
-    int emplonum;
+    string name;
+    int age;
+    int epmloyees;
 public:
-    void PrintCompany();
-    Company(int number) : emplonum(number) {};
-    ~Company(){
-        cout<<endl;
-        cout<<"Destructor is here";
-    }
+    Company();
+    Company(string newname);
+    Company(string newname, int newage);
+    Company(string newname, int newage, int newemplyees);
+    friend ostream &operator <<(ostream &os,const Company &obj);
+    ~Company(){};
 };
 
 #endif //OOPLAB1_COMPANY_H
