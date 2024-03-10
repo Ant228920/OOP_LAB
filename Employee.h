@@ -12,7 +12,8 @@ private:
 public:
     Employee();
     Employee(string comname, int comage, int comemp, string newfirst, string newlast);
-    friend ostream & operator << (ostream &out, const Employee &n);
+    Employee(Employee &&other);
+    friend ostream & operator << (ostream &os, const Employee &obj);
     ~Employee(){};
 };
 

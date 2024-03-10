@@ -14,7 +14,10 @@ public:
     Company(string newname);
     Company(string newname, int newage);
     Company(string newname, int newage, int newemplyees);
+    Company(const Company &other);
+    Company(Company &&other);
     friend ostream &operator <<(ostream &os,const Company &obj);
+    Company operator=(const Company &rhs);
     ~Company(){};
 };
 

@@ -14,9 +14,9 @@ private:
 public:
     Owner();
     Owner(string comname, int comage, int comemp, string newname, int newage, string newsex);
-//    Owner(const Owner &other);
-//    Owner(Owner &&other);
+    Owner(const Owner &other);
     friend ostream &operator <<(ostream &os,const Owner &obj);
+    Owner operator=(const Owner &rhs);
     ~Owner(){};
 };
 
