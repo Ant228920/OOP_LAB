@@ -6,53 +6,47 @@
 #include "Features.h"
 #include "Interface.h"
 #include "Abstract.h"
-void highSalary(Company &sal, float mon){
-    sal.highSal(mon);
-};
-void lowSalary(Company &sal, float mon){
-    sal.lowSal(mon);
-};
-void printOne(Interface &obj){
-    cout<<obj;
-};
-void printTwo(Abstract &obj){
-    cout<<obj;
-};
+#include <memory>
+
+
 int main() {
-    Company *a = new Owner;
-    a->OwnersComp();
-    Employee c("Anthony","White");
-    Company d("Nice",20,120);
-    cout<<endl;
-    d.Info();
-    cout<<endl;
-    c.Info();
-    Company *comp = new Company();
-    cout<<endl;
-    comp->Age(1952);
-    Company *emp = new Employee();
-    cout<<endl;
-    emp->Age(52);
-    Company acc;
-    highSalary(acc,200);
-    cout<<endl;
-    lowSalary(acc, 30);
-    cout<<endl;
-//    Animal an;
-//    Animal *anotherAnimal = new Animal;
-    Animal *cat = new Features();
-    cout<<endl;
-    cat->Sound();
-    cout<<endl;
-    cat->Info();
-    cout<<endl;
-    Interface *rand = new Interface;
-    cout<<*rand;
+    int choice;
 
-    printOne(*rand);
-    printTwo(*rand);
+    do {
+        cout << "Welcome! Please press 1 if you are an Admin and 2 if you are a User:" << endl;
+        int initial;
+        cin >> initial;
 
+        if (initial == 1) {
+            cout << "Please choose the action:" << endl;
+            cout << "1 - do some stuff" << endl;
+            cout << "2 - do some other stuff" << endl;
 
+            try {
+                cin >> choice;
+
+                if (choice != 1 && choice != 2)
+                    throw 0;
+
+                switch(choice) {
+                    case 1:
+                        cout << "Did some stuff" << endl;
+                        break;
+                    case 2:
+                        cout << "Did some other stuff" << endl;
+                        break;
+                }
+            } catch (int &ex) {
+                cout << "Invalid choice. Please try again." << endl;
+                continue;
+            }
+        } else if (initial == 2) {
+            cout << "You are a user." << endl;
+            break;
+        } else {
+            cout << "Invalid option. Please try again." << endl;
+        }
+    } while (choice != 1 && choice != 2);
 
     return 0;
 }

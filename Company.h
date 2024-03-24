@@ -20,12 +20,6 @@ public:
     virtual void Age(int num){
         cout<<" Was created in: "<<num;
     }
-    void highSal(int money){
-        cout<<"The highest salary: "<<money;
-    }
-    void lowSal(int money){
-        cout<<"The lowest salary: "<<money;
-    }
     Company(string newname);
     Company(string newname, int newage);
     Company(string newname, int newage, int newemplyees);
