@@ -10,11 +10,17 @@ private:
     string firstname;
     string lastname;
 public:
+    virtual void Info() override{
+        cout<<" Best worker: "<<firstname<<" "<<lastname;
+    }
+    virtual void Age(int age){
+        cout<<" The oldest member in a company: "<< age;
+    }
     Employee();
-    Employee(string comname, int comage, int comemp, string newfirst, string newlast);
+    Employee(string newfirst, string newlast);
     Employee(Employee &&other);
     friend ostream & operator << (ostream &os, const Employee &obj);
-    ~Employee(){};
+    virtual ~Employee(){};
 };
 
 

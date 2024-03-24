@@ -12,11 +12,12 @@ private:
     int age;
     string sex;
 public:
+    void OwnersComp(){
+        cout<<"Owner's company";
+    }
     Owner();
     Owner(string comname, int comage, int comemp, string newname, int newage, string newsex);
-    Owner(const Owner &other);
     friend ostream &operator <<(ostream &os,const Owner &obj);
-    Owner operator=(const Owner &rhs);
     ~Owner(){};
 };
 

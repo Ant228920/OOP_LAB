@@ -14,4 +14,8 @@ add_executable(ooplab1 main.cpp
         Employee.h
         Features.cpp
         Features.h
+        Abstract.cpp
+        Abstract.h
+        Interface.cpp
+        Interface.h
 )

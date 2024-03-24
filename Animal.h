@@ -1,7 +1,7 @@
 #ifndef OOPLAB1_ANIMAL_H
 #define OOPLAB1_ANIMAL_H
 #include <iostream>
-#include "Features.h"
+
 
 
 using namespace std;
@@ -11,14 +11,18 @@ private:
     string vud;
     int age;
     float weight;
-    Features features;
 public:
+//    virtual void final() final{
+//        "Cant inherite this text";
+//    }
+    virtual void Info()=0;
+    virtual void Sound()=0;
     Animal();
     Animal(string newvud);
     Animal(string newvud, int newage);
-    Animal(string newvud, int newage, float newweight, Features thefeatures);
+    Animal(string newvud, int newage, float newweight);
     friend ostream &operator<<(ostream &os, const Animal &obj);
-    ~Animal(){};
+    virtual~Animal(){};
 };
 
 
