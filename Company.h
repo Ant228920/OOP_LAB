@@ -11,15 +11,6 @@ private:
     int epmloyees;
 public:
     Company();
-    void OwnersComp(){
-        cout<<"This comapny is owner's";
-    }
-    virtual void Info(){
-        cout<<"Name of company: "<<name<<" Age of company: "<<age<<" Amount of employers: "<<epmloyees;
-    }
-    virtual void Age(int num){
-        cout<<" Was created in: "<<num;
-    }
     Company(string newname);
     Company(string newname, int newage);
     Company(string newname, int newage, int newemplyees);

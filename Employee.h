@@ -10,12 +10,6 @@ private:
     string firstname;
     string lastname;
 public:
-    virtual void Info() override{
-        cout<<" Best worker: "<<firstname<<" "<<lastname;
-    }
-    virtual void Age(int age){
-        cout<<" The oldest member in a company: "<< age;
-    }
     Employee();
     Employee(string newfirst, string newlast);
     Employee(Employee &&other);

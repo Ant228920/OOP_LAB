@@ -8,15 +8,13 @@ using namespace std;
 
 class Owner: public Company{
 private:
+    string pass;
     string name;
     int age;
     string sex;
 public:
-    void OwnersComp(){
-        cout<<"Owner's company";
-    }
     Owner();
-    Owner(string comname, int comage, int comemp, string newname, int newage, string newsex);
+    Owner(string newpass, string comname, int comage, int comemp, string newname, int newage, string newsex);
     friend ostream &operator <<(ostream &os,const Owner &obj);
     ~Owner(){};
 };

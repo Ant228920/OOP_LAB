@@ -18,4 +18,6 @@ add_executable(ooplab1 main.cpp
         Abstract.h
         Interface.cpp
         Interface.h
+        Functions.cpp
+        Functions.h
 )

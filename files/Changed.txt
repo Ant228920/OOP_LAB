@@ -1,0 +1,7 @@
+Your password: Nicegood
+Owner name: Anton
+Age: 18
+Sex: Male
+Company: Nice
+How old is the company: 25
+Amount of employees: 150
