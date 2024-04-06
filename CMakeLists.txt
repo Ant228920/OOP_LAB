@@ -20,4 +20,6 @@ add_executable(ooplab1 main.cpp
         Interface.h
         Functions.cpp
         Functions.h
+        Client.cpp
+        Client.h
 )

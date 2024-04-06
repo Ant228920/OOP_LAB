@@ -16,12 +16,6 @@ public:
     Features(string newsound, string newbehaviour);
     friend ostream &operator <<(ostream &os,const Features &obj);
     ~Features(){};
-    void Info()override {
-        cout<<"I am an animal";
-    }
-    void Sound()override {
-        cout<<"Meow";
-    }
 };
 
 

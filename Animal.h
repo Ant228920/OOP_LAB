@@ -15,8 +15,6 @@ public:
 //    virtual void final() final{
 //        "Cant inherite this text";
 //    }
-    virtual void Info()=0;
-    virtual void Sound()=0;
     Animal();
     Animal(string newvud);
     Animal(string newvud, int newage);

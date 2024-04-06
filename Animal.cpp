@@ -6,6 +6,6 @@ Animal::Animal()
 Animal::Animal(string newvud, int newage, float newweight)
         :vud{newvud},age{newage},weight{newweight}{}
 ostream &operator<<(ostream &os, const Animal &obj){
-    os<<"Vud: "<<obj.vud<<" Age: "<<obj.age<<" Weight: "<<obj.weight;
+    os<<obj.vud<<endl<<obj.age<<endl<<obj.weight<<endl;
     return os;
 }

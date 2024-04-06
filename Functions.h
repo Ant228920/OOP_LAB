@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Owner.h"
+#include "Animal.h"
 
 using namespace std;
 
@@ -9,7 +10,11 @@ using namespace std;
 
 void SignIn(Owner);
 int ExistCheck(Owner);
-void LogIn(Owner);
+bool LogIn(Owner);
+void AddAnimal(Animal);
+void ChangeInfo(Animal);
+void AccDelete(Owner);
+void ReadAnimal();
 
 
 

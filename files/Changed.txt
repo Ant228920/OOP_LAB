@@ -1,7 +1,7 @@
-Your password: Nicegood
+Your password: Newacc
 Owner name: Anton
 Age: 18
 Sex: Male
-Company: Nice
+Company: good
 How old is the company: 25
-Amount of employees: 150
+Amount of employees: 120
