@@ -3,6 +3,8 @@
 #include "Company.h"
 #include "Owner.h"
 #include "Animal.h"
+#include "Client.h"
+#include "Order.h"
 #include <memory>
 #include <fstream>
 using namespace std;
@@ -86,7 +88,7 @@ bool LogIn(Owner){
                 fin.close();
             }
             else{
-                cout<<"Wrong password! Please try later"<<endl;
+                cerr<<"Wrong password! Please try later"<<endl;
                 P = false;
                 fin.close();
             }
@@ -107,10 +109,13 @@ void AddAnimal(Animal){
         shared_ptr<int> newage{new int{0}};
         cout << "Enter the age ";
         cin >> *newage;
-        shared_ptr<float> newweight{new float{0}};
+        shared_ptr<float> newweight{new float{0.0}};
         cout << "Enter the weight: ";
         cin >> *newweight;
-        Animal an(*newname, *newage, *newweight);
+        shared_ptr<float> newprice{new float{0.0}};
+        cout<<"Enter the price: ";
+        cin >> *newprice;
+        Animal an(*newname, *newage, *newweight, *newprice);
         ofstream foutCA(R"(D:\oop labs\ooplab1\files\Animals.txt)",
                         ios_base::app);
         foutCA << an;
@@ -136,15 +141,18 @@ void ChangeInfo(Animal) {
         for (int i = 0; i < add; i++) {
             cout << "Add the animal number " << i+1 << endl;
             shared_ptr<string> newname{new string{""}};
-            cout << "Enter the name" << endl;
+            cout << "Enter the name: " << endl;
             cin >> *newname;
             shared_ptr<int> newage{new int{0}};
-            cout << "Enter the age ";
+            cout << "Enter the age: ";
             cin >> *newage;
             shared_ptr<float> newweight{new float{0}};
             cout << "Enter the weight: ";
             cin >> *newweight;
-            Animal an(*newname, *newage, *newweight);
+            shared_ptr<float> newprice{new float{0.0}};
+            cout<<"Enter the price: ";
+            cin >> *newprice;
+            Animal an(*newname, *newage, *newweight, *newprice);
             ofstream foutCA(R"(D:\oop labs\ooplab1\files\Animals.txt)",
                             ios_base::app);
             foutCA << an;
@@ -160,8 +168,9 @@ void ReadAnimal(){
     else {
         shared_ptr<string> name{new string{""}};
         shared_ptr<int> age{new int{0}};
-        shared_ptr<float> weight{new float{0}};
-        while (finE >> *name >> *age >> *weight) {
+        shared_ptr<float> weight{new float{0.0}};
+        shared_ptr<float> price{new float{0.0}};
+        while (finE >> *name >> *age >> *weight >> *price) {
             cout<<"Animal number "<<i<<endl;
             cout<<"name: ";
             cout<<*name<<endl;
@@ -169,8 +178,74 @@ void ReadAnimal(){
             cout<<*age<<endl;
             cout<<"weight: ";
             cout<<*weight<<endl;
+            cout<<"price: ";
+            cout<<*price<<endl;
             i++;
         }
     }
     finE.close();
+}
+bool IsIn(string namecl, string surnamecl){
+    ifstream finE(R"(D:\oop labs\ooplab1\files\Clients.txt)");
+    if (!finE.is_open()) {
+        cerr << "Error opening file: " << endl;
+    }
+    else {
+        shared_ptr<string> name{new string{""}};
+        shared_ptr<string> surname{new string{""}};
+        while (finE >> *name >> *surname) {
+            if (namecl == *name && surnamecl == *surname) {
+                finE.close();
+                return true;
+            }
+        }
+        finE.close();
+        return false;
+    }
+}
+void AddClient(Client client) {
+
+    if (!IsIn(client.getNameOfClient(),client.getSurnameOfClient())) {
+        ifstream finCl(R"(D:\oop labs\ooplab1\files\Clients.txt)");
+        if (!finCl.is_open()) {
+            cerr << "Error opening file" << endl;
+        } else {
+
+            ofstream foutCl(R"(D:\oop labs\ooplab1\files\Clients.txt)", ios_base::app);
+            foutCl << client << endl;
+            foutCl.close();
+        }
+    }
+}
+void MakeOrder(Client client) {
+    cout<<"Write the name of an animal"<<endl;
+    shared_ptr<string> name{new string{""}};
+    shared_ptr<string> sercname{new string{""}};
+    shared_ptr<int> age{new int{0}};
+    shared_ptr<double> weight{new double{0.0}};
+    shared_ptr<float> price{new float{0.0}};
+    cout<<"Enter the name"<<endl;
+    cin>>*sercname;
+    ifstream finFur(R"(D:\oop labs\ooplab1\files\Animals.txt)");
+    bool exist = false;
+    while(finFur>>*name>>*age>>*weight>>*price){
+        if(*sercname==*name){
+            ofstream foutOr(R"(D:\oop labs\ooplab1\files\Order.txt)",ios_base::app);
+            shared_ptr<string> addressDelivery{new string{""}};
+           // shared_ptr<double> priceDelivery{new double{20}};
+            shared_ptr<string> status{new string{"Reserved"}};
+            cout<<"Enter address of delivery"<<endl;
+            cin>>*addressDelivery;
+            Order order(*addressDelivery,*price,*status);
+            foutOr<<"Name "<<client.getNameOfClient()<<" Surname: "<<client.getSurnameOfClient()<<order<<endl;
+            foutOr.close();
+            exist = true;
+        }
+
+
+    }
+    if(!exist){
+        cerr<<"There is no animal with this name"<<endl;
+    }
+    finFur.close();
 }

@@ -1,0 +1,4 @@
+Name Anton Surname: Olianiuk Address: Vinnitsa Price: 20 Status: Reserved
+Name Bob Surname: Bo Address: Lviv Price: 20 Status: Reserved
+Name Andrei Surname: nice Address: kyiv Price: 20 Status: Reserved
+Name Anton Surname: Olianiuk Address: Vinnitysa Price: 50 Status: Reserved

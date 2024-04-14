@@ -11,6 +11,7 @@ private:
     string vud;
     int age;
     float weight;
+    float price;
 public:
 //    virtual void final() final{
 //        "Cant inherite this text";
@@ -18,9 +19,10 @@ public:
     Animal();
     Animal(string newvud);
     Animal(string newvud, int newage);
-    Animal(string newvud, int newage, float newweight);
+    Animal(string newvud, int newage, float newweight, float newprice);
     friend ostream &operator<<(ostream &os, const Animal &obj);
     virtual~Animal(){};
+    float Getprice();
 };
 
 

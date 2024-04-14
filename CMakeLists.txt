@@ -22,4 +22,7 @@ add_executable(ooplab1 main.cpp
         Functions.h
         Client.cpp
         Client.h
+        Wrong.h
+        Order.cpp
+        Order.h
 )
